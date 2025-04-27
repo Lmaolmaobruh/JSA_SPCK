@@ -4,12 +4,12 @@
   text-align: center;
 }
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #eaeaea;
-}
+} */
 
 .navbar {
   background-color: #333;
@@ -20,17 +20,19 @@ body {
 
 .container {
   background: url(../assets/bg1.png) center no-repeat fixed;
-  background-size: 50%;
+  background-size: cover;
+  height: 100vh;
   color: white;
   padding: 70px;
   border-radius: 50px;
+  margin: 20px;
 }
 
 .row {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin: 10px;
   padding: 20px;
 }
 
