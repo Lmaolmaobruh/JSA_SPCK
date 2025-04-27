@@ -1,0 +1,46 @@
+* {
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.container {
+  background: url(../assets/bg1.png) center no-repeat fixed;
+  background-size: 50%;
+  color: white;
+  padding: 70px;
+  border-radius: 50px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  padding: 20px;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto auto;
+}
+
+.col-lg-11 {
+  width: 90%;
+  margin: 10px;
+}
