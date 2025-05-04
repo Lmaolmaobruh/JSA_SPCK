@@ -5,6 +5,6 @@ Hoàn thành:
 
 Chưa hoàn thành:
 - Đăng kí, đăng nhập
-- Tìm kiếm: album, track, nghệ sĩ
+- Tìm kiếm: album, track, nghệ sĩ (bằng query ko phải id)
 - Nghe nhạc
 

@@ -96,36 +96,40 @@ function displayAlbums(albums) {
   container.innerHTML = html;
 }
 
-// function searchItem(q, type) {
-//     const token = localStorage.getItem("access_token");
-//     if (!token) {
-//         console.error("No access token found in local storage.");
-//         return;
-//     }
-//     const url = `https://api.spotify.com/v1/search?q=${encodeURIComponent(q)}&type=${type}&limit=10`;
-//     fetch(url, {
-//         method: "GET",
-//         headers: {
-//             Authorization: `Bearer ${token}`,
-//         },
-//     })
-//         .then((response) => {
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-//             return response.json();
-//         })
-//         .then((data) => {
-//             if (type === "album") {
-//                 displayAlbums(data.albums.items);
-//             } else if (type === "artist") {
-//                 displayArtists(data.artists.items);
-//             } else if (type === "track") {
-//                 displayTracks(data.tracks.items);
-//             }
-//         })
-//         .catch((error) => {
-//             console.error("Error:", error);
-//         });
+function searchItem() {
+  const searchInput = document.getElementById("searchInput").value;
+  const searchType = document.getElementById("searchType").value;
+  const container = document.getElementById("albumsContainer");
 
-// }
+  if (searchInput.trim() === "") {
+    container.innerHTML = "Vui lòng nhập từ khóa tìm kiếm.";
+    return;
+  }
+
+  getSpotifyToken(clientId, clientSecret)
+    .then((token) => {
+      return fetch(
+        `https://api.spotify.com/v1/search?q=${encodeURIComponent(
+          searchInput
+        )}&type=${searchType}&limit=10`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data[searchType].items.length === 0) {
+        container.innerHTML = "Không tìm thấy kết quả nào.";
+      } else {
+        displayAlbums(data[searchType].items);
+      }
+    })
+    .catch((error) => {
+      console.error("Lỗi:", error);
+      container.innerHTML = "Có lỗi xảy ra khi tìm kiếm.";
+    });
+}
