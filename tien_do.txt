@@ -1,0 +1,10 @@
+Hoàn thành:
+- Lấy album mới
+- Hiển thị album
+
+
+Chưa hoàn thành:
+- Đăng kí, đăng nhập
+- Tìm kiếm: album, track, nghệ sĩ
+- Nghe nhạc
+
