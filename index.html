@@ -30,103 +30,72 @@
   </head>
   <body>
     <main>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
       <div class="container">
-        <div class="row">
+        <div class="row" id="header">
           <div class="header">
-            <h1 class="big-heading">Welcome to<mark>Spotify</mark></h1>
+            <h1 class="big-heading">Welcome to iSounds</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              voluptatibus.
+              For the best music experience, please sign up or log in to this
+              app
             </p>
-            <button class="btn btn-primary">
-              <i class="fas fa-sign-in"></i> Sign up
-            </button>
-            <button class="btn btn-secondary">
-              <i class="fa fa-user-circle-o" aria-hidden="true"></i> Log in
-            </button>
+            <div class="buttons">
+              <button class="btn btn-primary">
+                <i class="fas fa-sign-in"></i> Sign up
+              </button>
+              <button class="btn btn-secondary">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i> Log in
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-11 feature-box">
-              <i data-feather="headphones"></i>
-              <h2 class="feature-heading">Listen to your favorite music</h2>
-              <p class="feature-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, voluptatibus.
-              </p>
-            </div>
+        <div class="features">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-11 feature-box">
+                <i data-feather="headphones"></i>
+                <h2 class="feature-heading">Listen to your favorite music</h2>
+                <p class="feature-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, voluptatibus.
+                </p>
+              </div>
 
-            <div class="col-lg-11 feature-box">
-              <i data-feather="music"></i>
-              <h2 class="feature-heading">Discover new artists</h2>
-              <p class="feature-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, voluptatibus.
-              </p>
-            </div>
+              <div class="col-lg-11 feature-box">
+                <i data-feather="music"></i>
+                <h2 class="feature-heading">Discover new artists</h2>
+                <p class="feature-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, voluptatibus.
+                </p>
+              </div>
 
-            <div class="col-lg-11 feature-box">
-              <i data-feather="star"></i>
-              <h2 class="feature-heading">Create your own playlists</h2>
-              <p class="feature-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, voluptatibus.
-              </p>
+              <div class="col-lg-11 feature-box">
+                <i data-feather="star"></i>
+                <h2 class="feature-heading">Create your own playlists</h2>
+                <p class="feature-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, voluptatibus.
+                </p>
+              </div>
             </div>
           </div>
+        </div>
+
+        <div id="albumsContainer" class="albums-container">
+          <p>Đang tải danh sách album...</p>
         </div>
       </div>
     </main>
   </body>
-  <footer></footer>
+  <footer>
+    <div class="footer">
+      <p>© 2025 iSounds. All rights reserved.</p>
+      <p>Made with <i data-feather="heart"></i> by Trần Gia Phát</p>
+    </div>
+  </footer>
   <script>
     feather.replace();
   </script>
+  <script src="./js/config.js"></script>
 </html>
