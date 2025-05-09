@@ -111,7 +111,7 @@ function searchItem() {
       return fetch(
         `https://api.spotify.com/v1/search?q=${encodeURIComponent(
           searchInput
-        )}&type=${searchType}&limit=10`,
+        )}&type=album,track,artist&limit=50`,
         {
           method: "GET",
           headers: {
