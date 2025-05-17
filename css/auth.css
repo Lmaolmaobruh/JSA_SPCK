@@ -125,3 +125,31 @@ form .form-help :where(label, a) {
     margin: 25px 0 40px;
   }
 }
+
+.auth-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-link {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 32px;
+  font-weight: normal;
+}
+
+.auth-link a {
+  color: #1565f7;
+  text-decoration: underline;
+}
+
+form.container {
+  max-width: 430px;
+  margin: 60px auto 0 auto;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

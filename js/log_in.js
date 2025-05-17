@@ -1,30 +1,38 @@
-if (localStorage.getItem("currentUser")) {
-  location.href = "./index.html";
+// if (localStorage.getItem("currentUser")) {
+//   location.href = "./index.html";
+// }
+
+function checkLogin(email, password) {
+  if (!localStorage.getItem("users")) {
+    return { success: false, message: "No user found" };
+  }
+
+  let users = JSON.parse(localStorage.getItem("users"));
+  let existingUser = users.find(
+    (user) => user.email === email.trim() && user.password === password.trim()
+  );
+
+  if (existingUser) {
+    return { success: true, user: existingUser };
+  } else {
+    return { success: false, message: "Email or password is incorrect" };
+  }
 }
 
 let form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (!localStorage.getItem("users")) {
-    alert("No user found");
+  let email = document.getElementById("email");
+  let password = document.getElementById("password");
+
+  const loginResult = checkLogin(email.value, password.value);
+
+  if (loginResult.success) {
+    localStorage.setItem("currentUser", JSON.stringify(loginResult.user));
+    localStorage.setItem("isLoggedIn", "true");
+    location.href = "../index.html";
   } else {
-    let users = JSON.parse(localStorage.getItem("users"));
-
-    let email = document.getElementById("email");
-    let password = document.getElementById("password");
-
-    let existingUser = users.find(
-      (index) =>
-        index.email === email.value.trim() &&
-        index.password === password.value.trim()
-    );
-
-    if (existingUser) {
-      localStorage.setItem("currentUser", JSON.stringify(existingUser));
-      location.href = "../html/home.html";
-    } else {
-      alert("Email or password is incorrect");
-    }
+    alert(loginResult.message);
   }
 });

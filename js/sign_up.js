@@ -1,7 +1,7 @@
 // if already logged in, redirect to home page
-if (localStorage.getItem("currentUser")) {
-  location.href = "./index.html";
-}
+// if (localStorage.getItem("currentUser")) {
+//   location.href = "./index.html";
+// }
 
 let form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
@@ -50,6 +50,6 @@ form.addEventListener("submit", (e) => {
     }
 
     alert("User created successfully, please login");
-    location.href = "./login.html";
+    location.href = "../html/log_in.html";
   }
 });
