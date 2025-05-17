@@ -363,3 +363,8 @@ footer p {
   font-size: 14px;
   color: #ffffff;
 }
+
+.navbar-toggler:hover {
+  background-color: #ec7373;
+  border: none;
+}
