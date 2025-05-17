@@ -57,15 +57,13 @@
               <li class="nav-item">
                 <a class="nav-link active" href="#">Link</a>
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Disabled</a
-                >
-              </li>
             </ul>
             <form class="d-flex" role="search" id="searchForm">
-              <select class="form-select me-2" id="searchType" style="width: auto;">
+              <select
+                class="form-select me-2"
+                id="searchType"
+                style="width: auto"
+              >
                 <option value="album">Album</option>
                 <option value="track">Bài hát</option>
                 <option value="artist">Nghệ sĩ</option>
@@ -159,12 +157,14 @@
   </script>
   <script src="./js/config.js"></script>
   <script>
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const query = document.getElementById('mainSearchInput').value;
-      if (query.trim() !== "") {
-        window.location.href = `./search.html?q=${encodeURIComponent(query)}`;
-      }
-    });
+    document
+      .getElementById("searchForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = document.getElementById("mainSearchInput").value;
+        if (query.trim() !== "") {
+          window.location.href = `./search.html?q=${encodeURIComponent(query)}`;
+        }
+      });
   </script>
 </html>

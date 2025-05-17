@@ -33,7 +33,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html">iSounds</a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler btn-dark"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -41,7 +41,7 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <i data-feather="menu"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -56,7 +56,11 @@
             </li>
           </ul>
           <form class="d-flex" role="search" id="searchForm">
-            <select class="form-select me-2" id="searchType" style="width: auto;">
+            <select
+              class="form-select me-2"
+              id="searchType"
+              style="width: auto"
+            >
               <option value="album">Album</option>
               <option value="track">Bài hát</option>
               <option value="artist">Nghệ sĩ</option>
@@ -102,14 +106,18 @@
     <script src="./js/config.js"></script>
     <script src="./js/artist.js"></script>
     <script>
-      document.getElementById('searchForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const query = document.getElementById('mainSearchInput').value;
-        const type = document.getElementById('searchType').value;
-        if (query.trim() !== "") {
-          window.location.href = `./search.html?q=${encodeURIComponent(query)}&type=${type}`;
-        }
-      });
+      document
+        .getElementById("searchForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const query = document.getElementById("mainSearchInput").value;
+          const type = document.getElementById("searchType").value;
+          if (query.trim() !== "") {
+            window.location.href = `./search.html?q=${encodeURIComponent(
+              query
+            )}&type=${type}`;
+          }
+        });
     </script>
   </body>
-</html> 
+</html>
